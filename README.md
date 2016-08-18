@@ -1,5 +1,8 @@
 # NativeScript Call Log
 
+## Limitations
+Currently, it only works on Android.
+
 ## Usage
 ```js
 calllog.getCallLog().then(function(callLogs){
