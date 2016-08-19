@@ -45,6 +45,7 @@ function getWhereClause(args) {
     if (args && args.keepHiddenNumbers === false && whereClause !== "") whereClause += " AND ";
     if (args && args.keepHiddenNumbers === false) {
         whereClause += "number != -2";
+    }
 
     return whereClause;
 }
