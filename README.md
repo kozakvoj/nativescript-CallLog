@@ -8,7 +8,7 @@ Currently, it only works on Android.
 ## Usage
 
 - args.filter[] - Types of calls that we want to get. If you send all three types it's the same as leaving it empty (all calls are returned by default).
-- args.contactType - You can return only calls which are (callLogsService.ContactType.KNOWN)/are not( icallLogsService.ContactType.UNKNOWN) in your contact list.
+- args.contactType - You can return only calls which are (callLogsService.ContactType.KNOWN)/are not (callLogsService.ContactType.UNKNOWN) in your contact list.
 
 ```js
 let args = {
