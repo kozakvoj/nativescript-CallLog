@@ -1,6 +1,6 @@
 {
   "name": "nativescript-CallLog",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Provides call log history for NativeScript mobile applications.",
   "main": "index.js",
   "nativescript": {},
