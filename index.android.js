@@ -1,10 +1,20 @@
 var appModule = require("application");
 var CallLog = require("./calllog-model");
+var Type = require("./call-types");
 
-exports.getCallLog = function () {
+exports.getCallLog = function (args) {
     return new Promise(function (resolve, reject) {
+        var projection = null;
+
+        if (args && args.filter && args.filter.length > 0) projection = "type = " + args.filter[0];
+        if (args && args.filter && args.filter.length > 1) {
+            for (var x = 1; x < args.filter.length; x++) {
+                projection += " OR type = " + args.filter[x];
+            }
+        }
+
         var CallLogs = android.provider.CallLog.Calls;
-        var c = appModule.android.context.getContentResolver().query(CallLogs.CONTENT_URI, null, null, null, null);
+        var c = appModule.android.context.getContentResolver().query(CallLogs.CONTENT_URI, null, projection, null, null);
 
         if (c.getCount() > 0) {
             var cl = [];
@@ -28,4 +38,6 @@ exports.getCallLog = function () {
         }
     });
 };
+
+exports.Type = Type;
 
