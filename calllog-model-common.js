@@ -4,6 +4,7 @@ var CallLog = (function () {
         this.type = "";
         this.date = "";
         this.duration = "";
+        this.contactid = "";
     }
 
     CallLog.prototype.initializeFromNative = function(nativeData) {

@@ -1,6 +1,6 @@
 {
   "name": "nativescript-CallLog",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Provides call log history for NativeScript mobile applications.",
   "main": "index.js",
   "nativescript": {},
@@ -11,11 +11,18 @@
     "type": "git",
     "url": "git+https://github.com/kozakvoj/nativescript-CallLog.git"
   },
-  "author": "Vojtech Kozak",
+  "author": {
+    "name": "Vojtech Kozak"
+  },
   "bugs": {
     "url": "https://github.com/kozakvoj/nativescript-CallLog/issues"
   },
   "homepage": "https://github.com/kozakvoj/nativescript-CallLog#readme",
-  "dependencies": {
-  }
+  "dependencies": {},
+  "readme": "# NativeScript Call Log\n\n[![NPM](https://nodei.co/npm/nativescript-CallLog.png?compact=true)](https://nodei.co/npm/nativescript-CallLog/)\n\n## Limitations\nCurrently, it only works on Android.\n\n## Usage\n```js\ncallLogsService.getCallLog().then(callLogs => {\n    callLogs.data.forEach(callLog => {\n        console.log(`${callLog['number']} ${callLog['type']} ${callLog['date']} ${callLog['duration']}`);\n    })\n});\n```",
+  "readmeFilename": "README.md",
+  "gitHead": "570da038b1608119eb9a85f42995d8807ef50a96",
+  "_id": "nativescript-CallLog@1.0.2",
+  "_shasum": "f56e80673d9870e4cbdbe01c31f195dad5d4ade3",
+  "_from": "nativescript-CallLog@>=1.0.0 <2.0.0"
 }

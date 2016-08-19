@@ -10,13 +10,15 @@ var CallLog = (function (_super) {
     }
 
     CallLog.prototype.initializeFromNative = function (cursor) {
+        var CallLogs = android.provider.CallLog.Calls;
         var mainCursorJson = helper.convertNativeCursorToJson(cursor);
 
-        this.number = mainCursorJson['number'];
-        this.type = mainCursorJson['type'];
-        this.date = mainCursorJson['date'];
-        this.duration = mainCursorJson['duration'];
-    }
+        this.number = mainCursorJson[CallLogs.NUMBER];
+        this.type = mainCursorJson[CallLogs.TYPE];
+        this.date = mainCursorJson[CallLogs.DATE];
+        this.duration = mainCursorJson[CallLogs.DURATION];
+        this.contactid = mainCursorJson[CallLogs.CONTACTID];
+    };
 
     return CallLog;
 })(CallLogCommon);
