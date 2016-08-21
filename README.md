@@ -22,7 +22,14 @@ let args = {
 
 callLogsService.getCallLog([args]).then(callLogs => {
     callLogs.data.forEach(callLog => {
-        console.log(`${callLog['number']} ${callLog['type']} ${callLog['date']} ${callLog['duration']}`);
+        console.log(`${callLog['number']} ${callLog['type']} ${callLog['date']} ${callLog['duration']} ${callLog['contactid']}`);
     })
 });
 ```
+
+## Returned fields
+- number
+- type (callLogsService.Type.INCOMING, callLogsService.Type.OUTCOMING, callLogsService.Type.MISSED)
+- date (timestamp)
+- duration (in seconds)
+- contactid (0 for not saved number)
